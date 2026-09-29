@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { categories } from "@/lib/data";
 import { ContactForm } from "@/components/ContactForm";
 import { ProductsAccordion } from "@/components/ProductsAccordion";
@@ -10,7 +10,7 @@ import { ProductsAccordion } from "@/components/ProductsAccordion";
 const AnimatedText = ({ text, className }: { text: string, className?: string }) => {
   const words = text.split(" ");
 
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -18,7 +18,7 @@ const AnimatedText = ({ text, className }: { text: string, className?: string })
     }
   };
 
-  const child = {
+  const child: Variants = {
     hidden: { opacity: 0, y: 10 },
     visible: { opacity: 1, y: 0, transition: { type: "spring", damping: 12, stiffness: 200 } }
   };
@@ -41,12 +41,12 @@ export default function Home() {
     "sq-group.png", "square.png", "syngenta.svg"
   ];
 
-  const fadeInUp = {
+  const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
   };
 
-  const staggerContainer = {
+  const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -54,12 +54,12 @@ export default function Home() {
     }
   };
 
-  const slideInLeft = {
+  const slideInLeft: Variants = {
     hidden: { opacity: 0, x: -100 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
   };
 
-  const slideInRight = {
+  const slideInRight: Variants = {
     hidden: { opacity: 0, x: 100 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
   };
